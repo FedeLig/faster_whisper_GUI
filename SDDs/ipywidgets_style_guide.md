@@ -1,19 +1,12 @@
-This guide provides a comprehensive breakdown of how to style and layout `ipywidgets` to create professional, interactive GUIs directly within Jupyter Notebooks.
-
-```markdown
 # Comprehensive Guide to Styling and Layout in ipywidgets
 
-This guide synthesizes advanced styling techniques from Deborah Mesquita’s EuroPython framework and Sunny Solanki’s deep-dives into Widget Layout and Styling.
-
----
+This guide provides a comprehensive breakdown of how to style and layout `ipywidgets` to create professional, interactive GUIs directly within Jupyter Notebooks. It synthesizes advanced styling techniques from Deborah Mesquita’s EuroPython framework and Sunny Solanki’s deep-dives into Widget Layout and Styling.
 
 ## 1. The Core Philosophy of ipywidgets GUIs
 According to Deborah Mesquita, `ipywidgets` are ideal for **internal tools**. 
 - **Rapid Prototyping:** Build a UI without touching HTML/CSS/JS.
 - **Python Integration:** Stay within the data science ecosystem.
 - **Zero Deployment:** The notebook *is* the application.
-
----
 
 ## 2. Structural Layout Management
 Layout controls the "Skeleton" of your UI: positioning, sizing, and spacing.
@@ -59,13 +52,12 @@ grid[1:3, 2] = widgets.Button(description='Sidebar', layout=widgets.Layout(heigh
 grid[3, :] = widgets.Button(description='Footer', layout=widgets.Layout(height='auto', width='auto'))
 ```
 
----
-
 ## 3. Visual Styling (`style` attribute)
 While `layout` defines position, `style` defines the "Skin" (colors, fonts).
 
 ### A. Discovering Style Keys
 Since different widgets have different style options, use the `.keys` property to see what is available:
+
 ```python
 btn = widgets.Button()
 print(btn.style.keys) 
@@ -85,8 +77,6 @@ For buttons, you can use `button_style` to apply standard colors:
 *   **Progress Bars:** `progress.style.bar_color = 'lime'`
 *   **Text Boxes:** `text.style.background = 'aliceblue'`
 *   **General Fonts:** `text.style.font_size = '20px'`, `text.style.font_weight = 'bold'`
-
----
 
 ## 4. Building Reactive GUIs
 
@@ -116,8 +106,6 @@ def on_value_change(change):
 toggle.observe(on_value_change, names='value')
 ```
 
----
-
 ## 5. Ultimate Customization: `widgets.HTML`
 For styles not supported by the `style` object, use the `HTML` widget. This allows you to inject raw CSS and HTML tags (like `<h1>`, `<b>`, or inline style tags).
 
@@ -129,8 +117,6 @@ widgets.HTML(
 )
 ```
 
----
-
 ## Summary Table: Layout vs. Style
 | Feature | Attribute Used | Examples |
 | :--- | :--- | :--- |
@@ -140,6 +126,4 @@ widgets.HTML(
 | **Typography** | `style` | `font_size`, `font_weight` |
 | **Nesting** | Containers | `VBox`, `HBox`, `AppLayout`, `GridBox` |
 
----
-*Based on tutorials by Deborah Mesquita and Sunny Solanki (CoderzColumn).*
-```
+*Based on tutorials by Deborah Mesquita and Sunny Solanki (CoderzColumn)* 

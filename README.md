@@ -35,7 +35,7 @@ To maximize transcription accuracy, the input audio undergoes several FFmpeg fil
 
 * **Format Conversion:** Converted to 16kHz `pcm_s16le` WAV format.
 * **`silenceremove`:** Trims extended silence at the start and end of the audio.
-* **`loudnorm` / `speechnorm`:** Normalizes the audio volume to ensure consistent input levels for the Whisper model.
+* **`loudnorm`/`speechnorm`:** Normalizes the audio volume to ensure consistent input levels for the Whisper model.
 
 ### Transcription
 
