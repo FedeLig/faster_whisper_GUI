@@ -1,6 +1,6 @@
 # Pipeline Architecture Design Document 
 
-##**Preprocessing bash (functions):**
+## **Preprocessing bash (functions):**
 
 - **WAV Conversion:**
 
@@ -27,7 +27,7 @@ if os.system(cmd) != 0:
         raise RuntimeError("FFmpeg failed...")
 ```
 
-##**Transcribing:** 
+## **Transcribing:** 
 
 **Faster Whisper** —> Batched inference with Silero VAD.
 
@@ -54,7 +54,7 @@ if os.system(cmd) != 0:
         print("[%.2fs -> %.2fs] %s" % (segment.start, segment.end, segment.text))
 ```
 
-##**Postprocessing:** 
+## **Postprocessing:** 
 
 - **Remove non-ASCII characters:**
     
@@ -79,7 +79,7 @@ if os.system(cmd) != 0:
     corrected_text = spell(clean_text)
 ```
 
-##**Consulted References:**
+## **Consulted References:**
 
 * [A Comparative Study of Speech-to-Text for Italian](https://ceur-ws.org/Vol-4121/Ital-IA_2025_paper_33.pdf)
 * [Enhancing Whisper transcriptions: pre- & post-processing techniques (article)](https://developers.openai.com/cookbook/examples/whisper_processing_guide)
